@@ -89,16 +89,20 @@ def main():
         lines = read.readlines()
         lines = [s.strip('\x00') for s in lines]
         lines = [s.strip('\n') for s in lines]
+        for x in range(len(lines)):
+            lines[x] = float(lines[x])
+        lines[0] = (lines[0] + 450) / 900
+        lines = np.array(lines)
         read.close()
         clearfile("C:\\Users\\denni\\Documents\\Assetto Corsa\\logs\\py_log.txt")
-
+        new_screen = np.array(new_screen, dtype='uint8')
         training_data.append([new_screen, lines])
-
         np.save("test", training_data)
 
         if len(training_data) % 100 == 0:
             print(len(training_data))
-            if len(training_data) == 500:
+            if len(training_data) == 4000:
+
                 np.save(file_name, training_data)
                 print("SAVED")
                 training_data = []
@@ -109,6 +113,6 @@ def main():
             cv2.destroyAllWindows()
             break
 
-        test = True
+        test = False
 
 main()
