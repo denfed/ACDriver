@@ -7,8 +7,8 @@ from keras import backend as K
 from sklearn import preprocessing
 
 batch_size = 25
-epochs = 10
-n = 2000
+epochs = 5
+n = 4000
 en = n - 50
 
 K.set_image_dim_ordering('tf')

@@ -101,8 +101,7 @@ def main():
 
         if len(training_data) % 100 == 0:
             print(len(training_data))
-            if len(training_data) == 4000:
-
+            if len(training_data) == 16000:
                 np.save(file_name, training_data)
                 print("SAVED")
                 training_data = []
