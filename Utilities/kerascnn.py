@@ -7,9 +7,9 @@ from keras import backend as K
 from keras.models import model_from_json
 
 batch_size = 25
-epochs = 5
-n = 1000
-en = n - 50
+epochs = 50
+n = 16000
+en = n - 3200
 
 K.set_image_dim_ordering('tf')
 

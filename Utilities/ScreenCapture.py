@@ -97,7 +97,7 @@ def main():
         clearfile("C:\\Users\\denni\\Documents\\Assetto Corsa\\logs\\py_log.txt")
         new_screen = np.array(new_screen, dtype='uint8')
         training_data.append([new_screen, lines])
-        np.save("test", training_data)
+        np.("test", training_data)
 
         if len(training_data) % 100 == 0:
             print(len(training_data))
